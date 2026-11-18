@@ -1,0 +1,12 @@
+{
+  "skill": "rubric-gate",
+  "should_trigger": [
+    "I want to build an ADHD capture app on my phone with SQLite, a quick-add API, and a daily digest.",
+    "Before coding this multi-file auth migration, build a True/False rubric with automated tests.",
+    "Check whether my new draft skill folder passes the Skill Usefulness Rubric."
+  ],
+  "should_not_trigger": [
+    "Fix a typo on line 12 of README.md.",
+    "Rename the local variable `cnt` to `count` inside utils.py."
+  ]
+}

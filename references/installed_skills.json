@@ -1,0 +1,27 @@
+{
+  "description": "Baseline skills installed in the local Antigravity and Mac Studio Orchestrator setup to prevent naming collisions.",
+  "skills": [
+    "agy-customizations",
+    "antigravity-guide",
+    "automation",
+    "build-prompt",
+    "claude-handoff",
+    "cleanup-worktrees",
+    "gdocs",
+    "gdrive",
+    "gemini-handoff",
+    "generative_ui",
+    "init-project-gates",
+    "mentor-mode",
+    "migrate-agent-settings",
+    "migrate-workflows",
+    "plugin",
+    "reverse-engineer-anything",
+    "route-task",
+    "run-workflow",
+    "swarm",
+    "swarm_monitor",
+    "ui-plugin-navigation",
+    "undo-last"
+  ]
+}

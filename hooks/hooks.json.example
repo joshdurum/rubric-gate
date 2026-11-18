@@ -1,0 +1,11 @@
+{
+  "rubric-stop-guard": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "python3 ./hooks/rubric_stop_guard.py",
+        "timeout": 20
+      }
+    ]
+  }
+}

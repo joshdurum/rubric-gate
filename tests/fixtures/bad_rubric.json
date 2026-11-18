@@ -1,0 +1,12 @@
+{
+  "project": "bad-example",
+  "criteria": [
+    {
+      "id": "B1",
+      "statement": "Rate UI polish on a 1-5 scale and ensure it looks good",
+      "tier": "blocker",
+      "verification_type": "human_check",
+      "passed": 4
+    }
+  ]
+}

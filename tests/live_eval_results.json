@@ -1,0 +1,118 @@
+{
+  "skill": "rubric-gate",
+  "trigger_eval_u2": {
+    "u2_passed": true,
+    "positive_hits": 3,
+    "positive_total": 3,
+    "negative_false_positives": 0,
+    "negative_total": 2,
+    "cases": [
+      {
+        "prompt": "I want to build an ADHD capture app on my phone with SQLite, a quick-add API, and a daily digest.",
+        "expected": true,
+        "predicted": true,
+        "passed": true,
+        "chosen_skill": "rubric-gate",
+        "reason": "The request matches rubric-gate's activation criteria on several counts. A phone app, a SQLite data layer, a quick-add API, and a daily digest will clearly span well over 3 files. It introduces new integrations (mobile platform, SQLite, an HTTP API). It is also multi-session scope, not a tiny single-file edit. The skip condition does not apply. The other skills do not fit: build-prompt is for compiling a prompt, init-project-gates is for writing gates into an existing repo's AGENTS.md/CLAUDE.md, and route-task only recommends a model tier.",
+        "cost_usd": 0.0004374
+      },
+      {
+        "prompt": "Before coding this multi-file auth migration, build a True/False rubric with automated tests.",
+        "expected": true,
+        "predicted": true,
+        "passed": true,
+        "chosen_skill": "rubric-gate",
+        "reason": "The request asks for a True/False rubric backed by automated tests before coding a multi-file auth migration. The rubric-gate description explicitly covers starting a feature or project with 3+ files and multi-session scope, and an auth migration is very likely to meet that threshold. It is not a tiny single-file edit, so the skip condition does not apply. The other skills do not fit: build-prompt is for compiling prompts, init-project-gates writes gates into AGENTS.md/CLAUDE.md rather than building a rubric with tests, and route-task recommends model tiers.",
+        "cost_usd": 0.00025952
+      },
+      {
+        "prompt": "Check whether my new draft skill folder passes the Skill Usefulness Rubric.",
+        "expected": true,
+        "predicted": true,
+        "passed": true,
+        "chosen_skill": "rubric-gate",
+        "reason": "The user asks to check whether a draft skill folder passes the Skill Usefulness Rubric. rubric-gate explicitly covers auditing whether a proposed Agent Skill passes objective usefulness gates, which matches this request directly. The other skills do not fit: build-prompt is for compiling prompts, init-project-gates is for writing gates into AGENTS.md/CLAUDE.md, and route-task is for model-tier recommendations.",
+        "cost_usd": 0.00024052000000000003
+      },
+      {
+        "prompt": "Fix a typo on line 12 of README.md.",
+        "expected": false,
+        "predicted": false,
+        "passed": true,
+        "chosen_skill": "none",
+        "reason": "Fixing a typo on one line of README.md is a tiny single-file edit, which rubric-gate explicitly says to skip. It does not involve a feature or project with 3+ files, a new integration, multi-session scope, or auditing an Agent Skill. None of the other skills fit either, so no skill should be activated.",
+        "cost_usd": 0.00021590000000000004
+      },
+      {
+        "prompt": "Rename the local variable `cnt` to `count` inside utils.py.",
+        "expected": false,
+        "predicted": false,
+        "passed": true,
+        "chosen_skill": "none",
+        "reason": "Renaming one local variable (`cnt` to `count`) inside a single file, utils.py, is a tiny single-file edit. rubric-gate's description explicitly says to skip tiny single-file edits, and the request involves no new feature, integration, multi-session scope, or Agent Skill audit. No other skill is needed for this request either.",
+        "cost_usd": 0.00021947000000000004
+      }
+    ]
+  },
+  "ab_eval_u1": {
+    "u1_measurable_lift": true,
+    "baseline_arm_a": {
+      "grade": {
+        "score": 0,
+        "max_score": 5,
+        "all_passed": false,
+        "checks": {
+          "G1_structured_json_created": false,
+          "G2_G3_schema_strict_bool_no_vague": false,
+          "G4_blocker_and_polish_split": false,
+          "G5_executable_auto_code_mapped": false,
+          "G6_complexity_gate_evaluated": false
+        },
+        "schema_errors": [
+          "No rubric JSON file created"
+        ],
+        "created_files": [
+          "RUBRIC.md"
+        ]
+      },
+      "metrics": {
+        "cost_usd": 0.095,
+        "duration_ms": 18547,
+        "wall_seconds": 19.14,
+        "num_turns": 2,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 23829,
+        "cache_creation_input_tokens": 17200,
+        "output_tokens": 2382
+      }
+    },
+    "with_skill_arm_b": {
+      "grade": {
+        "score": 5,
+        "max_score": 5,
+        "all_passed": true,
+        "checks": {
+          "G1_structured_json_created": true,
+          "G2_G3_schema_strict_bool_no_vague": true,
+          "G4_blocker_and_polish_split": true,
+          "G5_executable_auto_code_mapped": true,
+          "G6_complexity_gate_evaluated": true
+        },
+        "schema_errors": [],
+        "created_files": [
+          "rubric.json"
+        ]
+      },
+      "metrics": {
+        "cost_usd": 0.1574,
+        "duration_ms": 33919,
+        "wall_seconds": 34.34,
+        "num_turns": 6,
+        "input_tokens": 8,
+        "cache_read_input_tokens": 70306,
+        "cache_creation_input_tokens": 24293,
+        "output_tokens": 5316
+      }
+    }
+  }
+}

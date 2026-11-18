@@ -1,0 +1,178 @@
+{
+  "benchmark": "cross_skill_3_session_integration",
+  "model": "sonnet",
+  "score_delta": "4/7 -> 7/7",
+  "carryover_context_reduction_pct": 93.9,
+  "arm_a_without_skills": {
+    "score": 4,
+    "max_score": 7,
+    "pass_rate_pct": 57.1,
+    "checks": {
+      "P1_working_sqlite_app_built": true,
+      "P2_automated_tests_pass": true,
+      "P3_mvp_scope_creep_excluded": true,
+      "P4_python_stdlib_only": true,
+      "P5_hybrid_agents_claude_sync": false,
+      "P6_executable_rubric_ship_ready": false,
+      "P7_compact_handoff_under_400w": false
+    },
+    "artifacts": [
+      ".gitignore",
+      "CLAUDE.md",
+      "brain/__init__.py",
+      "brain/__main__.py",
+      "brain/cli.py",
+      "brain/config.py",
+      "brain/db.py",
+      "brain/notes.py",
+      "docs/DECISIONS.md",
+      "docs/PLAN.md",
+      "docs/SCHEMA.md",
+      "docs/SESSION_LOG.md",
+      "scripts/check.sh",
+      "tests/__init__.py",
+      "tests/test_cli.py",
+      "tests/test_notes.py"
+    ],
+    "test_summary": "Ran 31 tests (exit=0)",
+    "agents_md_lines": 0,
+    "handoff_words": 0,
+    "session3_carryover_words": 903,
+    "totals": {
+      "sessions": 3,
+      "total_turns": 27,
+      "total_wall_seconds": 218.54,
+      "total_cost_usd": 0.744304,
+      "total_output_tokens": 32160,
+      "total_cache_read_tokens": 613958,
+      "total_cache_creation_tokens": 90307
+    },
+    "sessions": [
+      {
+        "session": 1,
+        "role": "planning_no_skills",
+        "cost_usd": 0.215144,
+        "duration_ms": 74112,
+        "wall_seconds": 74.5,
+        "num_turns": 13,
+        "input_tokens": 12,
+        "cache_read_input_tokens": 149545,
+        "cache_creation_input_tokens": 24884,
+        "output_tokens": 10063
+      },
+      {
+        "session": 2,
+        "role": "coding_batch_1_no_skills",
+        "cost_usd": 0.159131,
+        "duration_ms": 33362,
+        "wall_seconds": 33.86,
+        "num_turns": 4,
+        "input_tokens": 8,
+        "cache_read_input_tokens": 89225,
+        "cache_creation_input_tokens": 24048,
+        "output_tokens": 5400
+      },
+      {
+        "session": 3,
+        "role": "coding_batch_2_no_skills",
+        "cost_usd": 0.370029,
+        "duration_ms": 109806,
+        "wall_seconds": 110.18,
+        "num_turns": 10,
+        "input_tokens": 20,
+        "cache_read_input_tokens": 375188,
+        "cache_creation_input_tokens": 41375,
+        "output_tokens": 16697
+      }
+    ]
+  },
+  "arm_b_with_3_skills": {
+    "score": 7,
+    "max_score": 7,
+    "pass_rate_pct": 100.0,
+    "checks": {
+      "P1_working_sqlite_app_built": true,
+      "P2_automated_tests_pass": true,
+      "P3_mvp_scope_creep_excluded": true,
+      "P4_python_stdlib_only": true,
+      "P5_hybrid_agents_claude_sync": true,
+      "P6_executable_rubric_ship_ready": true,
+      "P7_compact_handoff_under_400w": true
+    },
+    "artifacts": [
+      ".handoffs/archive/20261118T001335Z_HANDOFF.md",
+      ".handoffs/archive/20261118T001354Z_HANDOFF.md",
+      ".handoffs/loop_log.json",
+      "AGENTS.md",
+      "CLAUDE.md",
+      "HANDOFF.md",
+      "README.md",
+      "cli.py",
+      "decisions.md",
+      "plan.md",
+      "research.md",
+      "rubric.json",
+      "store.py",
+      "tasks.json",
+      "test_cli.py",
+      "test_store.py"
+    ],
+    "test_summary": "Ran 18 tests (exit=0)",
+    "agents_md_lines": 32,
+    "handoff_words": 62,
+    "session3_carryover_words": 55,
+    "totals": {
+      "sessions": 3,
+      "total_turns": 22,
+      "total_wall_seconds": 102.99,
+      "total_cost_usd": 0.530967,
+      "total_output_tokens": 16273,
+      "total_cache_read_tokens": 264728,
+      "total_cache_creation_tokens": 85429
+    },
+    "sessions": [
+      {
+        "session": 1,
+        "role": "kickoff_and_rubric_setup",
+        "cost_usd": 0.234412,
+        "duration_ms": 51773,
+        "wall_seconds": 52.14,
+        "num_turns": 11,
+        "input_tokens": 12,
+        "cache_read_input_tokens": 158259,
+        "cache_creation_input_tokens": 34843,
+        "output_tokens": 7919
+      },
+      {
+        "session": 2,
+        "role": "fresh_loop_task_T1",
+        "cost_usd": 0.160762,
+        "duration_ms": 32654,
+        "wall_seconds": 32.65,
+        "num_turns": 8,
+        "input_tokens": 6,
+        "cache_read_input_tokens": 55763,
+        "cache_creation_input_tokens": 25061,
+        "output_tokens": 5493
+      },
+      {
+        "session": 3,
+        "role": "fresh_loop_task_T2",
+        "cost_usd": 0.135793,
+        "duration_ms": 18203,
+        "wall_seconds": 18.2,
+        "num_turns": 3,
+        "input_tokens": 6,
+        "cache_read_input_tokens": 50706,
+        "cache_creation_input_tokens": 25525,
+        "output_tokens": 2861
+      }
+    ],
+    "loop_summary": {
+      "completed_all": true,
+      "halted_reason": "completed",
+      "done_count": 2,
+      "blocked_count": 0
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "project": "adhd-capture-mvp",
+  "version": "0.1",
+  "tier_mode": "FULL",
+  "criteria": [
+    {
+      "id": "R1",
+      "statement": "SKILL.md stays concise under 180 lines",
+      "tier": "blocker",
+      "verification_type": "auto_code",
+      "check": {
+        "kind": "line_count_max",
+        "path": "SKILL.md",
+        "max_lines": 180
+      },
+      "passed": null
+    },
+    {
+      "id": "R2",
+      "statement": "CLAUDE.md imports @AGENTS.md on the first line",
+      "tier": "blocker",
+      "verification_type": "auto_code",
+      "check": {
+        "kind": "regex_present",
+        "path": "CLAUDE.md",
+        "pattern": "^@AGENTS\\.md$"
+      },
+      "passed": null
+    },
+    {
+      "id": "R3",
+      "statement": "Quick capture view feels effortless one-handed on iPhone",
+      "tier": "polish",
+      "verification_type": "human_check",
+      "check": {
+        "kind": "manual",
+        "prompt": "Test adding one thought with your thumb in under 5 seconds."
+      },
+      "passed": null
+    }
+  ]
+}
